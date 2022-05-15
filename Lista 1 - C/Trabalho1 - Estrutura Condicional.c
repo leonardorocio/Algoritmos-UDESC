@@ -93,6 +93,8 @@ int main(int argc, char const *argv[])
             printf("6º Feira");
             break;
         }
+    } else {
+        printf("Data inválida");
     }
     return 0;
 }
