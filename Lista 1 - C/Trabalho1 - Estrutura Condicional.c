@@ -26,12 +26,10 @@ int main(int argc, char const *argv[])
         case 2:
             numeroChaveMes = anoBissexto ? 3 : 4;
             break;
-        case 3:
-        case 11:
+        case 3: case 11:
             numeroChaveMes = 4;
             break;
-        case 4:
-        case 7:
+        case 4: case 7:
             numeroChaveMes = 0;
             break;
         case 5:
@@ -43,8 +41,7 @@ int main(int argc, char const *argv[])
         case 8:
             numeroChaveMes = 3;
             break;
-        case 9:
-        case 12:
+        case 9: case 12:
             numeroChaveMes = 6;
             break;
         case 10:
