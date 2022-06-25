@@ -26,14 +26,11 @@ int main(int argc, char const *argv[])
             }
         }
         int prod[linA][colB], t, somaProds;
-        int n_mult = linB > colA ? linB : colA;
+        int n_mult = linB;
         for (i = 0; i < linA; i++) {
             for (j = 0; j < colB; j++) {
-                t = 0;
-                somaProds = 0;
-                while (t < n_mult) {
+                for (t = 0, somaProds = 0; t < n_mult; t++) {
                     somaProds += A[i][t] * B[t][j];
-                    t++;
                 }
                 prod[i][j] = somaProds;
             }
