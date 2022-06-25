@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 #include <locale.h>
 #include <math.h>
 
@@ -63,8 +62,7 @@ int cofatores(int ordem, int **matriz) {
 int main(int argc, char const *argv[])
 {
     int ordem, i, j;
-    srand(time(0));
-    setlocale(LC_ALL, "portuguese-brazilian");
+    setlocale(LC_ALL, "Portuguese");
     printf("Digite a ordem da matriz para o calculo do determinante: ");
     scanf("%d", &ordem);
     int** mat = malloc(sizeof(int*) * (ordem - 1));
