@@ -3,12 +3,18 @@
 #include <locale.h>
 #include <math.h>
 
+int** geraMatrizNXN(int ordem) {
+    int i;
+    int **mat = malloc(sizeof(int*) * ordem);
+    for (i = 0; i < ordem; i++) {
+        mat[i] = malloc(sizeof(int) * ordem);
+    }
+    return mat;
+}
+
 int** menor(int ordem, int **matriz, int k) {
     int i, j;
-    int** mat = malloc(sizeof(int*) * (ordem - 1));
-    for (i = 0; i < ordem; i++) {
-        mat[i] = malloc(sizeof(int) * (ordem - 1));
-    }
+    int **mat = geraMatrizNXN(ordem - 1);
     for (i = 0; i < ordem; i++) {
         for (j = 0; j < ordem; j++) {
             if (k != j && i != 0) {
@@ -65,13 +71,10 @@ int main(int argc, char const *argv[])
     setlocale(LC_ALL, "Portuguese");
     printf("Digite a ordem da matriz para o calculo do determinante: ");
     scanf("%d", &ordem);
-    int** mat = malloc(sizeof(int*) * (ordem - 1));
-    for (i = 0; i < ordem; i++) {
-        mat[i] = malloc(sizeof(int) * (ordem - 1));
-    }
+    int **mat = geraMatrizNXN(ordem);
     for (i = 0; i < ordem; i++) {
         for (j = 0; j < ordem; j++) {
-            printf("M[%d,%d]:", i, j);
+            printf("M[%d,%d]:", i + 1, j + 1);
             scanf("%d", &mat[i][j]);
         }
     }

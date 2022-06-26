@@ -27,23 +27,6 @@ int main(int argc, char const *argv[])
                 case 1: mmc *= divisor; break;
                 case 2: mmc *= divisor; mdc *= divisor;
             }
-            // if (a % divisor == 0 || b % divisor == 0) {
-            //     int flag = 0;
-                // if (a % divisor == 0) {
-                //     a = a / divisor;
-                //     flag++;
-                // }
-                // if (b % divisor == 0) {
-                //     b = b / divisor;
-                //     flag++;
-                // }
-            //     if (flag == 2) {
-            //         mdc *= divisor;
-            //     }
-            //     mmc *= divisor;
-            // } else {
-            //     divisor++;
-            // }
         }
         printf("Os valores do MMC e do MDC sao respectivamente: %d e %d\n", mmc, mdc);
         printf("Gostaria de continuar fazendo calculos? (1 para continuar e 0 para sair): ");
