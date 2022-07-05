@@ -8,13 +8,10 @@ int main(int argc, char const *argv[])
     int lin, col, i, j, soma_pares = 0, conta_pares = 0;
     float media;
     srand(time(0));
-    setlocale(LC_ALL, "portuguese-brazilian");
+    setlocale(LC_ALL, "Portuguese");
     printf("Digite a quantidade de linhas e colunas da matriz: ");
     scanf("%d%d", &lin, &col);
     int mat[lin][col];
-    // int tamanhoLinhas = sizeof(mat);
-    // printf("%d", tamanhoLinhas);
-    // int tamanhoColunas = sizeof(mat[0]) / 4;
     for (i = 0; i < lin; i++) {
         for (j = 0; j < col; j++) {
             mat[i][j] = rand() % 1000 + 1;
