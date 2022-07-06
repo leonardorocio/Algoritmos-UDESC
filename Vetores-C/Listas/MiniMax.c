@@ -21,9 +21,9 @@ int main() {
 			}
 		}
 	}
-	int menor = A[posX][0];
+	int menor = A[posXMaior][0];
 	for (j = 0; j < COL; j++) {
-		if (A[posX][j] < menor) {
+		if (A[posXMaior][j] < menor) {
 			menor = A[posX][j];
 			posY = j;
 		}
