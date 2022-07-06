@@ -12,7 +12,7 @@ int main() {
 	setlocale(LC_ALL, "Portuguese");
 	int A[LIN][COL], i, j, posXMaior = 0, posY = 0;
 	gera_valores(LIN, COL, A);
-	int maior = A[0][0], menor = A[0][0];
+	int maior = A[0][0];
 	for(i = 0; i < LIN; i++) {
 		for (j = 0; j < COL; j++) {
 			if (A[i][j] > maior) {
@@ -24,7 +24,7 @@ int main() {
 	int menor = A[posXMaior][0];
 	for (j = 0; j < COL; j++) {
 		if (A[posXMaior][j] < menor) {
-			menor = A[posX][j];
+			menor = A[posXMaior][j];
 			posY = j;
 		}
 	}
