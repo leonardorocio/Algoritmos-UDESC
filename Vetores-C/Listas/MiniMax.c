@@ -18,22 +18,16 @@ int main() {
 			if (A[i][j] > maior) {
 				maior = A[i][j];
 				posXMaior = i;
-				j = -1;
-			} else if (A[i][j] < menor && i == posXMaior) {
-				menor = A[i][j];
-				posY = j;
 			}
 		}
 	}
-//	int menor = A[posX][0];
-//	for (j = 0; j < COL; j++) {
-//		if (A[posX][j] < menor) {
-//			menor = A[posX][j];
-//			posY = j;
-//		}
-//	}
-	int teste = A[posXMaior][posY];
+	int menor = A[posX][0];
+	for (j = 0; j < COL; j++) {
+		if (A[posX][j] < menor) {
+			menor = A[posX][j];
+			posY = j;
+		}
+	}
 	mostra_matriz(LIN, COL, A, 'A');
-	printf("O elemento MiniMax é %d na posição (%d, %d)\n", menor, posXMaior, posY);
-	printf("O elemento MiniMaxTeste é %d na posição %d", maior, teste);
+	printf("O elemento MiniMax Ã© %d na posiÃ§Ã£o (%d, %d)\n", menor, posXMaior, posY);
 }
