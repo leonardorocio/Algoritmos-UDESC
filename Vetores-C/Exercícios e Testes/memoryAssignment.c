@@ -17,7 +17,7 @@ int** geraMatrizNXN(int ordem) {
 int** menor(int ordem, int **matriz, int k) {
     int i, j;
     int **mat = geraMatrizNXN(ordem - 1);
-    int *ptr = &matriz[0][0];
+    int *ptr = matriz[0]; // &matriz[0][0]
     for (i = 0; i < ordem; i++) {
         for (j = 0; j < ordem; j++) {
             if (k != j && i != 0) {
@@ -64,13 +64,8 @@ int cofatores(int ordem, int **matriz) {
     for (i = 0; i < ordem; i++) {
     	int **men = menor(ordem, matriz, i);
         cofator = (int) pow(-1.0, i) * determinantes(ordem - 1, men);
-        if (**men != NULL) {
-        	printf("To aqui\n");
-		}
-        free(men);
-    	if (**men == NULL) {
-    		printf("Liberado");
-		}
+        free(men[0]);
+	free(men);
         soma += *(ptr + i) * cofator;
     }
     return soma;
@@ -90,10 +85,8 @@ int main(int argc, char const *argv[])
             scanf("%d", &mat[i][j]);
         }
     }
-//    printf("%d\n", mat);
-//    printf("%d\n", **mat);
-//	printf("%d\n", &mat);
     printf("%d", determinantes(ordem, mat));
+    free(mat[0]);
     free(mat);
     return 0;
 }

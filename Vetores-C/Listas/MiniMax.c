@@ -12,28 +12,22 @@ int main() {
 	setlocale(LC_ALL, "Portuguese");
 	int A[LIN][COL], i, j, posXMaior = 0, posY = 0;
 	gera_valores(LIN, COL, A);
-	int maior = A[0][0], menor = A[0][0];
+	int maior = A[0][0];
 	for(i = 0; i < LIN; i++) {
 		for (j = 0; j < COL; j++) {
 			if (A[i][j] > maior) {
 				maior = A[i][j];
 				posXMaior = i;
-				j = -1;
-			} else if (A[i][j] < menor && i == posXMaior) {
-				menor = A[i][j];
-				posY = j;
 			}
 		}
 	}
-//	int menor = A[posX][0];
-//	for (j = 0; j < COL; j++) {
-//		if (A[posX][j] < menor) {
-//			menor = A[posX][j];
-//			posY = j;
-//		}
-//	}
-	int teste = A[posXMaior][posY];
+	int menor = A[posXMaior][0];
+	for (j = 0; j < COL; j++) {
+		if (A[posXMaior][j] < menor) {
+			menor = A[posXMaior][j];
+			posY = j;
+		}
+	}
 	mostra_matriz(LIN, COL, A, 'A');
-	printf("O elemento MiniMax é %d na posição (%d, %d)\n", menor, posXMaior, posY);
-	printf("O elemento MiniMaxTeste é %d na posição %d", maior, teste);
+	printf("O elemento MiniMax Ã© %d na posiÃ§Ã£o (%d, %d)\n", menor, posXMaior, posY);
 }
