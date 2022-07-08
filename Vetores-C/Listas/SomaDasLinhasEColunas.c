@@ -16,6 +16,7 @@ int main() {
 	for (i = 0; i < LIN; i++) {
 		for (j = 0; j < COL; j++) {
 			SL[i] += M[i][j];
+//			SC[i] += M[j][i];
 			SC[j] += M[i][j];
 		}
 	}
